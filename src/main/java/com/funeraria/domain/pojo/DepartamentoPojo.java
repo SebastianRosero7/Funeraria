@@ -1,4 +1,4 @@
-package com.funeraria.domain;
+package com.funeraria.domain.pojo;
 
 import lombok.Getter;
 import lombok.Setter;

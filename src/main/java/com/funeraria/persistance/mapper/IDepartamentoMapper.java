@@ -1,6 +1,6 @@
 package com.funeraria.persistance.mapper;
 
-import com.funeraria.domain.DepartamentoPojo;
+import com.funeraria.domain.pojo.DepartamentoPojo;
 import com.funeraria.persistance.entity.DepartamentoEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
