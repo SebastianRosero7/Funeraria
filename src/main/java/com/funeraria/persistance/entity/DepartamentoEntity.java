@@ -7,15 +7,17 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter @Setter
 @Entity
-@Table(name="Departamento")
+@Table(name="departamento")
 public class DepartamentoEntity {
-    @Id
-    @Column(name="Dep_codigo")
-    private Integer codDepartamento;
 
-    @Column( name="Dep_nombre")
+    @Id
+    @Column(name="dep_codigo")
+    private Integer id;
+
+    @Column( name="dep_nombre")
     private String nombre;
 
 }

@@ -31,12 +31,20 @@ public class DepartamentoServiceImpl implements IDepartamentoService {
     }
 
     @Override
+    public Optional<DepartamentoPojo> update(DepartamentoPojo departamentoPojo) {
+        if(departamentoRepository.getById(departamentoPojo.getId()).isEmpty()){
+            return Optional.empty();
+        }
+        return Optional.of(departamentoRepository.save(departamentoPojo));
+    }
+
+    @Override
     public boolean delete(Integer id) {
-        try {
-            departamentoRepository.delete(id);
-            return true;
-        } catch (Exception e) {
+        if(departamentoRepository.getById(id).isEmpty()){
             return false;
         }
+
+        departamentoRepository.delete(id);
+        return true;
     }
 }

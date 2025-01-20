@@ -29,7 +29,7 @@ public class DepartamentoController {
     }
 
     @PostMapping
-    public ResponseEntity<DepartamentoPojo> saveDepartamento(DepartamentoPojo departamentoPojo) {
+    public ResponseEntity<DepartamentoPojo> saveDepartamento(@RequestBody DepartamentoPojo departamentoPojo) {
 
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
@@ -41,5 +41,15 @@ public class DepartamentoController {
         }
     }
 
+    @PatchMapping
+    public ResponseEntity<DepartamentoPojo> updateDepartamento(@RequestBody DepartamentoPojo departamentoPojo) {
+
+       return ResponseEntity.of(service.update(departamentoPojo));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> deleteDepartamento(@PathVariable Integer id) {
+        return new ResponseEntity<>(service.delete(id)? HttpStatus.OK:HttpStatus.NOT_FOUND);
+    }
 
 }

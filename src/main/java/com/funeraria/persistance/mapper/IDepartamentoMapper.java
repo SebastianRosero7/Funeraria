@@ -22,8 +22,8 @@ public interface IDepartamentoMapper {
      * @param departamentoEntity entidad que se va a convertir
      * @return Pojo convertido
      */
-    @Mapping(source = "codDepartamento",target = "id")
-    @Mapping(source = "nombre",target = "nombre")
+    //@Mapping(source = "id",target = "id")
+    //@Mapping(source = "nombre",target = "nombre")
     DepartamentoPojo toDepartamentoPojo(DepartamentoEntity departamentoEntity);
 
     /**
