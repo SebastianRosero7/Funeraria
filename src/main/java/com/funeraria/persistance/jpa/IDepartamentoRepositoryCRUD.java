@@ -1,4 +1,4 @@
-package com.funeraria.persistance.repository;
+package com.funeraria.persistance.jpa;
 
 import com.funeraria.persistance.entity.DepartamentoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

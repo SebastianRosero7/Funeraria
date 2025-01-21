@@ -1,6 +1,6 @@
 package com.funeraria.persistance.mapper;
 
-import com.funeraria.domain.pojo.DepartamentoPojo;
+import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.persistance.entity.DepartamentoEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -24,15 +24,15 @@ public interface IDepartamentoMapper {
      */
     //@Mapping(source = "id",target = "id")
     //@Mapping(source = "nombre",target = "nombre")
-    DepartamentoPojo toDepartamentoPojo(DepartamentoEntity departamentoEntity);
+    DepartamentoDto toDepartamentoPojo(DepartamentoEntity departamentoEntity);
 
     /**
      * Convierte un Pojo a una Entity
-     * @param departamentoPojo Pojo que se va a convertir
+     * @param departamentoDto Pojo que se va a convertir
      * @return Entity convertida
      */
-    @InheritInverseConfiguration
-    DepartamentoEntity toDepartamentoEntity(DepartamentoPojo departamentoPojo);
+    //@InheritInverseConfiguration
+    DepartamentoEntity toDepartamentoEntity(DepartamentoDto departamentoDto);
 
     /**
      * Converts a list of DepartamentoEntity objects to a list of DepartamentoPojo objects.
@@ -40,7 +40,7 @@ public interface IDepartamentoMapper {
      * @param departamentoEntity the list of DepartamentoEntity objects to be converted
      * @return a list of converted DepartamentoPojo objects
      */
-    List<DepartamentoPojo> toDepartamentosPojo(List<DepartamentoEntity> departamentoEntity);
+    List<DepartamentoDto> toDepartamentosPojo(List<DepartamentoEntity> departamentoEntity);
 
 
 }

@@ -1,6 +1,6 @@
 package com.funeraria.controller;
 
-import com.funeraria.domain.pojo.DepartamentoPojo;
+import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.domain.service.IDepartamentoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,22 +18,22 @@ public class DepartamentoController {
     private final IDepartamentoService service;
 
     @GetMapping
-    public ResponseEntity<List<DepartamentoPojo>> getAll() {
+    public ResponseEntity<List<DepartamentoDto>> getAll() {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(service.getAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DepartamentoPojo> getDepartamnetoId(@PathVariable Integer id) {
+    public ResponseEntity<DepartamentoDto> getDepartamnetoId(@PathVariable Integer id) {
         return ResponseEntity.of(service.getById(id));
     }
 
     @PostMapping
-    public ResponseEntity<DepartamentoPojo> saveDepartamento(@RequestBody DepartamentoPojo departamentoPojo) {
+    public ResponseEntity<DepartamentoDto> saveDepartamento(@RequestBody DepartamentoDto departamentoDto) {
 
         try {
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(service.save(departamentoPojo));
+                    .body(service.save(departamentoDto));
 
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
@@ -42,9 +42,9 @@ public class DepartamentoController {
     }
 
     @PatchMapping
-    public ResponseEntity<DepartamentoPojo> updateDepartamento(@RequestBody DepartamentoPojo departamentoPojo) {
+    public ResponseEntity<DepartamentoDto> updateDepartamento(@RequestBody DepartamentoDto departamentoDto) {
 
-       return ResponseEntity.of(service.update(departamentoPojo));
+       return ResponseEntity.of(service.update(departamentoDto));
     }
 
     @DeleteMapping("/{id}")

@@ -1,4 +1,4 @@
-package com.funeraria.domain.pojo;
+package com.funeraria.domain.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import lombok.Setter;
 
 
 @Getter @Setter
-public class DepartamentoPojo {
+public class DepartamentoDto {
 
     private Integer id;
     private String nombre;

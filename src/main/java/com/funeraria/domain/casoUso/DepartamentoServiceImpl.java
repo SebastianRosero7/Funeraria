@@ -1,7 +1,8 @@
-package com.funeraria.domain.service;
+package com.funeraria.domain.casoUso;
 
-import com.funeraria.domain.pojo.DepartamentoPojo;
+import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.domain.repository.IDepartamentoRepository;
+import com.funeraria.domain.service.IDepartamentoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,26 +17,26 @@ public class DepartamentoServiceImpl implements IDepartamentoService {
 
 
     @Override
-    public List<DepartamentoPojo> getAll() {
+    public List<DepartamentoDto> getAll() {
         return departamentoRepository.getAll();
     }
 
     @Override
-    public Optional<DepartamentoPojo> getById(Integer id) {
+    public Optional<DepartamentoDto> getById(Integer id) {
         return departamentoRepository.getById(id);
     }
 
     @Override
-    public DepartamentoPojo save(DepartamentoPojo departamentoPojo) {
-        return departamentoRepository.save(departamentoPojo);
+    public DepartamentoDto save(DepartamentoDto departamentoDto) {
+        return departamentoRepository.save(departamentoDto);
     }
 
     @Override
-    public Optional<DepartamentoPojo> update(DepartamentoPojo departamentoPojo) {
-        if(departamentoRepository.getById(departamentoPojo.getId()).isEmpty()){
+    public Optional<DepartamentoDto> update(DepartamentoDto departamentoDto) {
+        if(departamentoRepository.getById(departamentoDto.getId()).isEmpty()){
             return Optional.empty();
         }
-        return Optional.of(departamentoRepository.save(departamentoPojo));
+        return Optional.of(departamentoRepository.save(departamentoDto));
     }
 
     @Override
