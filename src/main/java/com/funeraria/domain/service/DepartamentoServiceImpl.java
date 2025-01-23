@@ -1,8 +1,8 @@
-package com.funeraria.domain.casoUso;
+package com.funeraria.domain.service;
 
+import com.funeraria.domain.UseaCase.IDepartamentoUseCase;
 import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.domain.repository.IDepartamentoRepository;
-import com.funeraria.domain.service.IDepartamentoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class DepartamentoServiceImpl implements IDepartamentoService {
+public class DepartamentoServiceImpl implements IDepartamentoUseCase {
 
     private final IDepartamentoRepository departamentoRepository;
 

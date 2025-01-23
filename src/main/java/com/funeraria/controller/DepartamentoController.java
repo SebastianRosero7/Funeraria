@@ -1,7 +1,7 @@
 package com.funeraria.controller;
 
 import com.funeraria.domain.dto.DepartamentoDto;
-import com.funeraria.domain.service.IDepartamentoService;
+import com.funeraria.domain.UseaCase.IDepartamentoUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping("/departamentos")
 public class DepartamentoController {
 
-    private final IDepartamentoService service;
+    private final IDepartamentoUseCase service;
 
     @GetMapping
     public ResponseEntity<List<DepartamentoDto>> getAll() {

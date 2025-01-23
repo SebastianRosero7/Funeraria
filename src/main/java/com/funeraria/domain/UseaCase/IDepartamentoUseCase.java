@@ -1,11 +1,11 @@
-package com.funeraria.domain.service;
+package com.funeraria.domain.UseaCase;
 
 import com.funeraria.domain.dto.DepartamentoDto;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface IDepartamentoService {
+public interface IDepartamentoUseCase {
 
     List<DepartamentoDto> getAll();
     Optional<DepartamentoDto> getById(Integer id);

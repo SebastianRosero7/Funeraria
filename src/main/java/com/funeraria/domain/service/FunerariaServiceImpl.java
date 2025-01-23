@@ -1,20 +1,19 @@
-package com.funeraria.domain.casoUso;
+package com.funeraria.domain.service;
 
+import com.funeraria.domain.UseaCase.IFunerariaUseCase;
 import com.funeraria.domain.dto.FunerariaDto;
 import com.funeraria.domain.repository.IFunerariaRepository;
-import com.funeraria.domain.service.IFunerariaService;
 import com.funeraria.exception.EmailValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.ExemptionMechanismException;
 import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class FunerariaServiceImpl implements IFunerariaService {
+public class FunerariaServiceImpl implements IFunerariaUseCase {
 
     @Qualifier("IFunerariaRepository")
     private final IFunerariaRepository funerariaRepository;

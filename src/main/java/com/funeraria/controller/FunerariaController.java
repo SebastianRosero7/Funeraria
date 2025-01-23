@@ -2,7 +2,7 @@ package com.funeraria.controller;
 
 
 import com.funeraria.domain.dto.FunerariaDto;
-import com.funeraria.domain.service.IFunerariaService;
+import com.funeraria.domain.UseaCase.IFunerariaUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping(path = "/funerarias")
 public class FunerariaController {
 
-    private final IFunerariaService service;
+    private final IFunerariaUseCase service;
 
     @GetMapping
     public ResponseEntity<List<FunerariaDto>> getAll() {

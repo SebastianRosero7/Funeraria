@@ -22,4 +22,9 @@ public class FunerariaEntity {
     private String email;
     @Column(name = "telefono")
     private String telefono;
+
+
+    @OneToOne(mappedBy = "funerariaEntity", orphanRemoval = true)
+    private UsuarioEntity usuarioEntity;
+
 }

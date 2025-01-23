@@ -12,7 +12,9 @@ import java.util.List;
 public interface IFunerariaMapper {
     @Mapping(source = "id",target = "id")
     FunerariaDto toFunerariaDto(FunerariaEntity funerariaEntity);
+
     @InheritConfiguration
+    @Mapping(target = "usuarioEntity", ignore = true)
     FunerariaEntity toFunerariaEntity(FunerariaDto funerariaDto);
     List<FunerariaDto> toFunerariasDto(List<FunerariaEntity> funerariasList);
 }

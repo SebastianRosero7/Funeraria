@@ -17,7 +17,7 @@ public class DepartamentoEntity {
     @Column(name="dep_codigo")
     private Integer id;
 
-    @Column( name="dep_nombre")
+    @Column( name="dep_nombre",nullable = false)
     private String nombre;
 
 }
