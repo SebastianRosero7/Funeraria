@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface IFunerariaRepositoryCRUD  extends JpaRepository<FunerariaEntity,Integer> {
     Optional<FunerariaEntity> findByNombre(String nombre);
+    Optional<FunerariaEntity> findByEmail(String email);
 }

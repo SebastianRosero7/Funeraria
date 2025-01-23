@@ -2,7 +2,9 @@ package com.funeraria.persistance.mapper;
 
 import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.persistance.entity.DepartamentoEntity;
+import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -20,7 +22,7 @@ public interface IDepartamentoMapper {
      * @param departamentoEntity entidad que se va a convertir
      * @return Pojo convertido
      */
-    //@Mapping(source = "id",target = "id")
+    @Mapping(source = "id",target = "id")
     //@Mapping(source = "nombre",target = "nombre")
     DepartamentoDto toDepartamentoDto(DepartamentoEntity departamentoEntity);
 
@@ -29,7 +31,7 @@ public interface IDepartamentoMapper {
      * @param departamentoDto Pojo que se va a convertir
      * @return Entity convertida
      */
-    //@InheritInverseConfiguration
+    @InheritInverseConfiguration
     DepartamentoEntity toDepartamentoEntity(DepartamentoDto departamentoDto);
 
     /**

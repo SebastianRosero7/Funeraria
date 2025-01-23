@@ -1,19 +1,19 @@
-package com.funeraria.domain.repository;
+package com.funeraria.domain.service;
 
+import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.domain.dto.FunerariaDto;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface IFunerariaRepository {
+public interface IFunerariaService {
 
     List<FunerariaDto> getAll();
     Optional<FunerariaDto> getById(Integer id);
     Optional<FunerariaDto> findByNombre(String nombre);
     Optional<FunerariaDto> findByEmail(String email);
+    Optional<FunerariaDto> update(FunerariaDto funerariaDto);
     FunerariaDto save(FunerariaDto funerariaDto);
-    void delete(Integer id);
+    boolean delete(Integer id);
 
 }

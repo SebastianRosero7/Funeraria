@@ -10,5 +10,6 @@ public class FunerariaDto {
     private Integer id;
     private String nombre;
     private String direccion;
-
+    private String email;
+    private String telefono;
 }

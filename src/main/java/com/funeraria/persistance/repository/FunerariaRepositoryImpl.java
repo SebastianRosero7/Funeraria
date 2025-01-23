@@ -38,6 +38,12 @@ public class FunerariaRepositoryImpl implements IFunerariaRepository {
     }
 
     @Override
+    public Optional<FunerariaDto> findByEmail(String email) {
+        return funerariaRepositoryCRUD.findByEmail(email)
+                .map(funerariaMapper::toFunerariaDto);
+    }
+
+    @Override
     public FunerariaDto save(FunerariaDto funerariaDto) {
         FunerariaEntity funerariaEntity= funerariaMapper.toFunerariaEntity(funerariaDto);
         return funerariaMapper.toFunerariaDto(funerariaRepositoryCRUD.save(funerariaEntity));

@@ -10,7 +10,6 @@ import lombok.Setter;
 public class FunerariaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_funeraria")
     private Integer id;
 
@@ -19,4 +18,8 @@ public class FunerariaEntity {
 
     @Column(name = "direccion")
     private String direccion;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "telefono")
+    private String telefono;
 }
