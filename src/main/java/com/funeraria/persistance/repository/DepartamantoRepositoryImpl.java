@@ -24,18 +24,18 @@ public class DepartamantoRepositoryImpl implements IDepartamentoRepository {
 
     @Override
     public List<DepartamentoDto> getAll() {
-        return departamentoMapper.toDepartamentosPojo( departamentoRepositoryCRUD.findAll());
+        return departamentoMapper.toDepartamentosDto( departamentoRepositoryCRUD.findAll());
     }
 
     @Override
     public Optional<DepartamentoDto> getById(Integer id) {
-        return departamentoRepositoryCRUD.findById(id).map(departamentoMapper::toDepartamentoPojo);
+        return departamentoRepositoryCRUD.findById(id).map(departamentoMapper::toDepartamentoDto);
     }
 
     @Override
     public DepartamentoDto save(DepartamentoDto departamentoDto) {
         DepartamentoEntity departamentoEntity = departamentoMapper.toDepartamentoEntity(departamentoDto);
-        return departamentoMapper.toDepartamentoPojo(departamentoRepositoryCRUD.save(departamentoEntity));
+        return departamentoMapper.toDepartamentoDto(departamentoRepositoryCRUD.save(departamentoEntity));
     }
 
     @Override
