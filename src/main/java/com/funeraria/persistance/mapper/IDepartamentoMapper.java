@@ -23,7 +23,7 @@ public interface IDepartamentoMapper {
      * @return Pojo convertido
      */
     @Mapping(source = "id",target = "id")
-    //@Mapping(source = "nombre",target = "nombre")
+    @Mapping(source = "nombre",target = "nombre")
     DepartamentoDto toDepartamentoDto(DepartamentoEntity departamentoEntity);
 
     /**
@@ -32,6 +32,7 @@ public interface IDepartamentoMapper {
      * @return Entity convertida
      */
     @InheritInverseConfiguration
+    @Mapping(target = "municipioEntities", ignore = true)
     DepartamentoEntity toDepartamentoEntity(DepartamentoDto departamentoDto);
 
     /**

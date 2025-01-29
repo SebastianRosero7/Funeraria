@@ -15,10 +15,10 @@ public class UsuarioEntity {
     @Column(name = "codigo")
     private Integer id;
 
-    @Column(name = "usuario", nullable = false, length = 10)
+    @Column(name = "usuario", nullable = false, length = 50)
     private String usuario;
 
-    @Column(name = "contrasena", nullable = false, length = 20)
+    @Column(name = "contrasena", nullable = false, length = 50)
     private String contrasena;
 
     @Column(name = "tipo", nullable = false)

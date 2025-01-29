@@ -1,11 +1,11 @@
 package com.funeraria.persistance.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Getter @Setter
@@ -19,5 +19,8 @@ public class DepartamentoEntity {
 
     @Column( name="dep_nombre",nullable = false)
     private String nombre;
+
+    @OneToMany(mappedBy = "departamentoEntity", orphanRemoval = true)
+    private List<MunicipioEntity> municipioEntities;
 
 }
