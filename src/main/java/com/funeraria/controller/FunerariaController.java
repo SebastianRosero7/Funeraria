@@ -2,7 +2,7 @@ package com.funeraria.controller;
 
 
 import com.funeraria.domain.dto.FunerariaDto;
-import com.funeraria.domain.UseaCase.IFunerariaUseCase;
+import com.funeraria.domain.useCase.IFunerariaUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.funeraria.controller;
 
-import com.funeraria.domain.UseaCase.IUsuarioUsecase;
+import com.funeraria.domain.useCase.IUsuarioUsecase;
 import com.funeraria.domain.dto.UsuarioDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

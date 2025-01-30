@@ -6,6 +6,7 @@ import com.funeraria.persistance.entity.MunicipioEntity;
 import com.funeraria.persistance.jpa.IMunicipioRepositoryCRUD;
 import com.funeraria.persistance.mapper.IMunicipioMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MunicipioRepositoryImpl implements IMunicipioReposiroty {
 
+    @Qualifier("IMunicipioMapper")
     private final IMunicipioMapper municipioMapper;
     private final IMunicipioRepositoryCRUD municipioRepositoryCRUD;
 
@@ -28,8 +30,8 @@ public class MunicipioRepositoryImpl implements IMunicipioReposiroty {
     }
 
     @Override
-    public Optional<MunicipioDto> getByDepartamentoId(Integer id) {
-        return municipioRepositoryCRUD.findByDepartamentoId(id).map(municipioMapper::toMunicipioDto);
+    public List<MunicipioDto> getByDepartamentoId(Integer id) {
+        return municipioMapper.toMunicipiosDto(municipioRepositoryCRUD.findByDepartamentoId(id));
     }
 
     @Override

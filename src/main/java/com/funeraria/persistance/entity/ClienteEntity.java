@@ -1,9 +1,6 @@
 package com.funeraria.persistance.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,9 +24,20 @@ public class ClienteEntity {
     @Column(name = "cli_fechanac", nullable = false)
     private LocalDate fechaNacimiento;
 
-
+    @Column(name = "funerariaid_funeraria")
     private Integer funerariaId;
 
-
+    @Column(name = "mun_codigo")
     private Integer municipioId;
+
+
+    @ManyToOne
+    @JoinColumn(name = "funerariaid_funeraria", insertable = false, updatable = false)
+    private FunerariaEntity funerariaEntity;
+
+
+    @ManyToOne
+    @JoinColumn(name = "mun_codigo",insertable = false, updatable = false)
+    private MunicipioEntity municipioEntity;
+
 }

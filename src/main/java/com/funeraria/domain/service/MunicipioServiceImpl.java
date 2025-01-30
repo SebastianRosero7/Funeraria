@@ -1,6 +1,6 @@
 package com.funeraria.domain.service;
 
-import com.funeraria.domain.UseaCase.IMunicipioUseCase;
+import com.funeraria.domain.useCase.IMunicipioUseCase;
 import com.funeraria.domain.dto.MunicipioDto;
 import com.funeraria.domain.repository.IMunicipioReposiroty;
 import lombok.RequiredArgsConstructor;
@@ -26,7 +26,7 @@ public class MunicipioServiceImpl implements IMunicipioUseCase {
     }
 
     @Override
-    public Optional<MunicipioDto> getByDepartamentoId(Integer id) {
+    public List<MunicipioDto> getByDepartamentoId(Integer id) {
         return municipioReposiroty.getByDepartamentoId(id);
     }
 

@@ -1,6 +1,6 @@
 package com.funeraria.domain.service;
 
-import com.funeraria.domain.UseaCase.IFunerariaUseCase;
+import com.funeraria.domain.useCase.IFunerariaUseCase;
 import com.funeraria.domain.dto.FunerariaDto;
 import com.funeraria.domain.repository.IFunerariaRepository;
 import com.funeraria.exception.EmailValidationException;

@@ -1,8 +1,7 @@
 package com.funeraria.controller;
 
-import com.funeraria.domain.UseaCase.IMunicipioUseCase;
+import com.funeraria.domain.useCase.IMunicipioUseCase;
 import com.funeraria.domain.dto.MunicipioDto;
-import com.funeraria.domain.dto.UsuarioDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,8 +27,9 @@ public class MunicipioController {
     }
 
     @GetMapping("/byIdDepartamento/{id}")
-    public ResponseEntity<MunicipioDto> getMunicipioByDepartamentoId(@PathVariable Integer id) {
-        return ResponseEntity.of(municipioUseCase.getByDepartamentoId(id));
+    public ResponseEntity<List<MunicipioDto>> getMunicipioByDepartamentoId(@PathVariable Integer id) {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(municipioUseCase.getByDepartamentoId(id));
     }
 
     @PatchMapping

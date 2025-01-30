@@ -1,6 +1,6 @@
 package com.funeraria.domain.service;
 
-import com.funeraria.domain.UseaCase.IDepartamentoUseCase;
+import com.funeraria.domain.useCase.IDepartamentoUseCase;
 import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.domain.repository.IDepartamentoRepository;
 import lombok.RequiredArgsConstructor;

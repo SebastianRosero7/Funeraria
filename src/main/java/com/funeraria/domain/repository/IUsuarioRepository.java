@@ -1,6 +1,5 @@
 package com.funeraria.domain.repository;
 
-import com.funeraria.domain.dto.DepartamentoDto;
 import com.funeraria.domain.dto.UsuarioDto;
 
 import java.util.List;

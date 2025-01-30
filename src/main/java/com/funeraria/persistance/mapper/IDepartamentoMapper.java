@@ -23,7 +23,6 @@ public interface IDepartamentoMapper {
      * @return Pojo convertido
      */
     @Mapping(source = "id",target = "id")
-    @Mapping(source = "nombre",target = "nombre")
     DepartamentoDto toDepartamentoDto(DepartamentoEntity departamentoEntity);
 
     /**

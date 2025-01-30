@@ -1,4 +1,4 @@
-package com.funeraria.domain.UseaCase;
+package com.funeraria.domain.useCase;
 
 import com.funeraria.domain.dto.FunerariaDto;
 
