@@ -17,6 +17,7 @@ public interface IClienteMapper {
     @InheritInverseConfiguration
     @Mapping(target = "municipioEntity", ignore = true)
     @Mapping(target = "funerariaEntity", ignore = true)
+    @Mapping(target = "titularEntity", ignore = true)
     ClienteEntity toClienteEntity(ClienteDto clienteDto);
 
     List<ClienteDto> toClientesDto(List<ClienteEntity> clienteEntities);

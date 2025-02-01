@@ -21,7 +21,7 @@ public class ClienteServiceImpl implements IClienteUseCase {
     }
 
     @Override
-    public Optional<ClienteDto> getById(Integer cedula) {
+    public Optional<ClienteDto> getById(String cedula) {
         return clienteRepository.getById(cedula);
     }
 
@@ -50,7 +50,7 @@ public class ClienteServiceImpl implements IClienteUseCase {
     }
 
     @Override
-    public boolean delete(Integer cedula) {
+    public boolean delete(String cedula) {
         if(clienteRepository.getById(cedula).isEmpty()){
             return false;
         }

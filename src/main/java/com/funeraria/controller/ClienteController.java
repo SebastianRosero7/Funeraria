@@ -25,7 +25,7 @@ public class ClienteController {
     }
 
     @GetMapping("/{cedula}")
-    public ResponseEntity<ClienteDto> getClienteByCedula(@PathVariable Integer cedula) {
+    public ResponseEntity<ClienteDto> getClienteByCedula(@PathVariable String cedula) {
         return ResponseEntity.of(clienteUseCase.getById(cedula));
     }
 
@@ -61,7 +61,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/{cedula}")
-    public ResponseEntity<Boolean> deleteDepartamento(@PathVariable Integer cedula) {
+    public ResponseEntity<Boolean> deleteDepartamento(@PathVariable String cedula) {
         return new ResponseEntity<>(clienteUseCase.delete(cedula)? HttpStatus.OK:HttpStatus.NOT_FOUND);
     }
 

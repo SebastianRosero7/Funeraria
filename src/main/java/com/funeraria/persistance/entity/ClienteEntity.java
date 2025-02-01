@@ -13,7 +13,7 @@ public class ClienteEntity {
 
     @Id
     @Column(name = "cli_cedula")
-    private Integer cedula;
+    private String cedula;
 
     @Column(name = "cli_nombre", length = 20, nullable = false)
     private String nombre;
@@ -39,5 +39,8 @@ public class ClienteEntity {
     @ManyToOne
     @JoinColumn(name = "mun_codigo",insertable = false, updatable = false)
     private MunicipioEntity municipioEntity;
+
+    @OneToOne(mappedBy = "clienteEntity", orphanRemoval = true)
+    private TitularEntity titularEntity;
 
 }

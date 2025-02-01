@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Getter @Setter
 public class ClienteDto {
 
-    private Integer cedula;
+    private String cedula;
     private String nombre;
     private String apellido;
     private LocalDate fechaNacimiento;

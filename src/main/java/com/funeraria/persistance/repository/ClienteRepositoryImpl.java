@@ -26,7 +26,7 @@ public class ClienteRepositoryImpl implements IClienteRepository {
     }
 
     @Override
-    public Optional<ClienteDto> getById(Integer cedula) {
+    public Optional<ClienteDto> getById(String cedula) {
         return clienteRepositoryCRUD.findById(cedula).map(clienteMapper::toClientesDto);
     }
 
@@ -47,7 +47,7 @@ public class ClienteRepositoryImpl implements IClienteRepository {
     }
 
     @Override
-    public void delete(Integer cedula) {
+    public void delete(String cedula) {
         clienteRepositoryCRUD.deleteById(cedula);
     }
 }
