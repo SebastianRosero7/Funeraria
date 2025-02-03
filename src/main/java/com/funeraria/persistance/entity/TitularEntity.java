@@ -30,4 +30,7 @@ public class TitularEntity {
     @JoinColumn(name = "cli_cedula",insertable = false, updatable = false)
     private ClienteEntity clienteEntity;
 
+    @OneToOne(mappedBy = "titularEntity",cascade = CascadeType.REMOVE)
+    private ContratoEntity contratoEntity;
+
 }

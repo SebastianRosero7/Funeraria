@@ -16,6 +16,7 @@ public interface IFunerariaMapper {
     @InheritConfiguration
     @Mapping(target = "usuarioEntity", ignore = true)
     @Mapping(target = "clienteEntities", ignore = true)
+    @Mapping(target = "contratoEntities", ignore = true)
     FunerariaEntity toFunerariaEntity(FunerariaDto funerariaDto);
     List<FunerariaDto> toFunerariasDto(List<FunerariaEntity> funerariasList);
 }

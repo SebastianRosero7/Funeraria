@@ -15,6 +15,7 @@ public interface ITitularMapper {
     TitularDto toTitularDto(TitularEntity titularEntity);
 
     @Mapping(target = "clienteEntity", ignore = true)
+    @Mapping(target = "contratoEntity", ignore = true)
     @InheritInverseConfiguration
     TitularEntity toTitularEntity(TitularDto titularDto);
     List<TitularDto> toTitularesDto(List<TitularEntity> titularEntities);
