@@ -13,7 +13,7 @@ public class ContratoEntity {
 
     @Id
     @Column(name = "cont_numero")
-    private Integer id;
+    private String id;
 
     @Column(name = "cont_tipo",length = 10,nullable = false)
     private String tipoContrato;
@@ -38,7 +38,7 @@ public class ContratoEntity {
     private TitularEntity titularEntity;
 
     @ManyToOne
-    @JoinColumn(name = "funerariaid_funeraria")
+    @JoinColumn(name = "funerariaid_funeraria",insertable = false, updatable = false)
     private FunerariaEntity funerariaEntity;
 
 }

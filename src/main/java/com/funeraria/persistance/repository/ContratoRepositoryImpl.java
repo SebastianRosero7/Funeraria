@@ -6,6 +6,7 @@ import com.funeraria.persistance.entity.ContratoEntity;
 import com.funeraria.persistance.jpa.IContratoRepositoryCRUD;
 import com.funeraria.persistance.mapper.IContratoMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
@@ -17,6 +18,8 @@ import java.util.Optional;
 public class ContratoRepositoryImpl implements IContratoRepository {
 
     private final IContratoRepositoryCRUD repositoryCRUD;
+
+    @Qualifier("IContratoMapper")
     private final IContratoMapper mapper;
 
     @Override
