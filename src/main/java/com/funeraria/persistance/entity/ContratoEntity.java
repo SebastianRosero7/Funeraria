@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -40,5 +42,8 @@ public class ContratoEntity {
     @ManyToOne
     @JoinColumn(name = "funerariaid_funeraria",insertable = false, updatable = false)
     private FunerariaEntity funerariaEntity;
+
+    @OneToMany(mappedBy = "contratoEntity", cascade = CascadeType.REMOVE)
+    private List<DesignadoEntity> designadoEntities;
 
 }

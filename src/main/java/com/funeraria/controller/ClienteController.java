@@ -55,13 +55,13 @@ public class ClienteController {
     }
 
     @PatchMapping
-    public ResponseEntity<ClienteDto> updateDepartamento(@RequestBody ClienteDto clienteDto) {
+    public ResponseEntity<ClienteDto> updateCliente(@RequestBody ClienteDto clienteDto) {
 
         return ResponseEntity.of(clienteUseCase.update(clienteDto));
     }
 
     @DeleteMapping("/{cedula}")
-    public ResponseEntity<Boolean> deleteDepartamento(@PathVariable String cedula) {
+    public ResponseEntity<Boolean> deleteCliente(@PathVariable String cedula) {
         return new ResponseEntity<>(clienteUseCase.delete(cedula)? HttpStatus.OK:HttpStatus.NOT_FOUND);
     }
 

@@ -17,6 +17,7 @@ public interface IContratoMapper {
     @InheritInverseConfiguration
     @Mapping(target = "funerariaEntity", ignore = true)
     @Mapping(target = "titularEntity", ignore = true)
+    @Mapping(target = "designadoEntities", ignore = true)
     ContratoEntity toContratoEntity(ContratoDto dto);
     List<ContratoDto> toContratosDto(List<ContratoEntity> contratos);
 }

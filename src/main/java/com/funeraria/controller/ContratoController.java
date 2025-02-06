@@ -72,13 +72,13 @@ public class ContratoController {
     }
 
     @PatchMapping
-    public ResponseEntity<ContratoDto> updateDepartamento(@RequestBody ContratoDto contratoDto) {
+    public ResponseEntity<ContratoDto> updateContrato(@RequestBody ContratoDto contratoDto) {
 
         return ResponseEntity.of(useCase.update(contratoDto));
     }
 
     @DeleteMapping("/{codigo}")
-    public ResponseEntity<Boolean> deleteDepartamento(@PathVariable String codigo) {
+    public ResponseEntity<Boolean> deleteContrato(@PathVariable String codigo) {
         return new ResponseEntity<>(useCase.delete(codigo)? HttpStatus.OK:HttpStatus.NOT_FOUND);
     }
 

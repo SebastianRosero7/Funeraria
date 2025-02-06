@@ -43,4 +43,7 @@ public class ClienteEntity {
     @OneToOne(mappedBy = "clienteEntity", orphanRemoval = true)
     private TitularEntity titularEntity;
 
+    @OneToOne(mappedBy = "clienteEntity", orphanRemoval = true)
+    private DesignadoEntity designadoEntity;
+
 }

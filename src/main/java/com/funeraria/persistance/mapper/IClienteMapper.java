@@ -18,6 +18,7 @@ public interface IClienteMapper {
     @Mapping(target = "municipioEntity", ignore = true)
     @Mapping(target = "funerariaEntity", ignore = true)
     @Mapping(target = "titularEntity", ignore = true)
+    @Mapping(target = "designadoEntity", ignore = true)
     ClienteEntity toClienteEntity(ClienteDto clienteDto);
 
     List<ClienteDto> toClientesDto(List<ClienteEntity> clienteEntities);
