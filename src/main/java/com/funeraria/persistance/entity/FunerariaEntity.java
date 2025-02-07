@@ -34,6 +34,9 @@ public class FunerariaEntity {
     private List<ClienteEntity> clienteEntities;
 
     @OneToMany(mappedBy = "funerariaEntity", orphanRemoval = true)
-    private List<ContratoEntity> contratoEntities = new ArrayList<>();
+    private List<ContratoEntity> contratoEntities;
+
+    @OneToMany(mappedBy = "funerariaEntity", orphanRemoval = true)
+    private List<ConvenioEntity> convenioEntities;
 
 }
