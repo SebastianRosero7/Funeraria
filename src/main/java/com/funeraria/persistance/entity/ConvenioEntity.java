@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter @Setter
 @Entity
 @Table(name = "convenio")
@@ -35,5 +38,8 @@ public class ConvenioEntity {
     @ManyToOne
     @JoinColumn(name = "funerariaid_funeraria",insertable = false, updatable = false)
     private FunerariaEntity funerariaEntity;
+
+    @OneToMany(mappedBy = "convenioEntity", cascade = CascadeType.REMOVE)
+    private List<ConvenioServicioEntity> convenioServicioEntities;
 
 }
